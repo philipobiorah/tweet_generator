@@ -1,7 +1,7 @@
 echo # tweet_generator
-## a fun and silly tweet generator that generates sentences that sound ## realistic, but not always sensible.
+## a fun and silly tweet generator that generates sentences that sound realistic, but not always sensible.
 
-# We shall attempt the following:
+### We shall attempt the following:
 
 - Use a Python script to randomly generate words from a dictionary.
 - Build sentences by sampling these words using a Markov language model.
