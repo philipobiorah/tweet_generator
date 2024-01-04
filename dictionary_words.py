@@ -8,3 +8,18 @@ The sentences do not have to make grammatical sense.
 Word selection can be completely random and the word order does not matter.
 """
 
+
+
+
+f = open("sample_file.txt", "r")
+#lets print only a specified number of words
+line_count = 0;
+for x in f:
+    print(x)
+    line_count += 1
+
+    if line_count == 5:
+        break
+
+f.close()
+
