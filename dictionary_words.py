@@ -1,3 +1,4 @@
+import random
 """
 We will make several assumptions to reduce the complexity of this program:
 
@@ -23,20 +24,16 @@ Word selection can be completely random and the word order does not matter.
 # f.close()
 
 
-def read_file(file, n):
-    f = open(file, "r")
-    line_count = 0
-    for w in f:
-        print(w)
-        line_count += 1
-        
-        if line_count == n:
-            break
-        
-    f.close()
+def read_file(file_path, num_of_words):
+    with open(file_path, "r") as file:
+        words = file.read().split()
+
+        selected_words = random.sample(words, min(num_of_words, len(words)) )
+        return selected_words
+   
 
 if __name__ == '__main__':
     file = '/usr/share/dict/words'
-    num_of_words = 5
-    read_file(file, num_of_words)
+    num_of_words = 3
+    print(read_file(file, num_of_words))
     
