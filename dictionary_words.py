@@ -1,4 +1,5 @@
 import random
+import sys
 """
 We will make several assumptions to reduce the complexity of this program:
 
@@ -33,7 +34,9 @@ def read_file(file_path, num_of_words):
    
 
 if __name__ == '__main__':
-    file = '/usr/share/dict/words'
-    num_of_words = 3
-    print(read_file(file, num_of_words))
+    if len(sys.argv) > 1:
+
+        file = '/usr/share/dict/words'
+        num_of_words = int(sys.argv[1])
+        print(read_file(file, num_of_words))
     
