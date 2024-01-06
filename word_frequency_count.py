@@ -13,7 +13,18 @@ def word_frequency_count(file_path):
     with open(file_path, "r") as file:
         words = file.read().split()
 
-    
+    #iterate over every word in words
+    for word in words:
+        if word in d:
+            d[word] = d[word] + 1
+        else:
+            d[word] = 1
 
 
-    
+    #print the contents of dictionary
+    for key in list(d.keys()):
+        print(key,":", d[key])
+
+
+if __name__ == '__main__':
+    word_frequency_count("sample_file.txt")
