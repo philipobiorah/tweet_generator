@@ -16,23 +16,37 @@ def histogram(source_text):
         file_content = file.read()
 
     # Remove punctuation and special characters, keeping only words.
-    cleaned_text = re.sub(r'[^\w\s]', '', file_content)
+    # cleaned_text = re.sub(r'[^\w\s]', '', file_content)
+
+    # This regex matches anything that's not a letter or whitespace.
+    cleaned_text = re.sub(r'[^a-zA-Z\s]', '', file_content)
+                  
 
     # Split the cleaned text into words
     words = cleaned_text.split()
 
     #iterate over every word in words
     for word in words:
+        word = word.lower()
         if word in d:
             d[word] = d[word] + 1
         else:
             d[word] = 1
 
 
+
+
     #print the contents of dictionary
     for key in list(d.keys()):
         print(key,":", d[key])
+    return d
+
+def unique_words(d):
+    print("Unique words: ", len(d))
+    return len(d)
 
 
 if __name__ == '__main__':
-    histogram("gutenberg.txt")
+    # histogram("gutenberg.txt")
+
+    unique_words(histogram("shylock_homles.txt"))
