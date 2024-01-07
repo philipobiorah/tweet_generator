@@ -7,11 +7,19 @@ For example,
  then the word frequency would be 
  "one" -> 1, "fish" -> 4, "two" -> 1, "red" -> 1, "blue" -> 1.
 """
+import re
 
-def word_frequency_count(file_path):
+def histogram(source_text):
     d = dict()
-    with open(file_path, "r") as file:
-        words = file.read().split()
+    with open(source_text, "r") as file:
+        
+        file_content = file.read()
+
+    # Remove punctuation and special characters, keeping only words.
+    cleaned_text = re.sub(r'[^\w\s]', '', file_content)
+
+    # Split the cleaned text into words
+    words = cleaned_text.split()
 
     #iterate over every word in words
     for word in words:
@@ -27,4 +35,4 @@ def word_frequency_count(file_path):
 
 
 if __name__ == '__main__':
-    word_frequency_count("sample_file.txt")
+    histogram("gutenberg.txt")
