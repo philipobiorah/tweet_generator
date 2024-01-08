@@ -45,8 +45,18 @@ def unique_words(d):
     print("Unique words: ", len(d))
     return len(d)
 
+"""
+A frequency() function that takes a 
+word and histogram argument and returns 
+the number of times that word appears in a text. For example, when given the word "mystery" and the Holmes histogram, it will return the integer 20.
+"""
+
+def frequency(w, d):
+    print(w ,":", d[w])
+    return w ,":", d[w]
 
 if __name__ == '__main__':
     # histogram("gutenberg.txt")
 
     unique_words(histogram("shylock_homles.txt"))
+    frequency("mystery", histogram("shylock_homles.txt"))
