@@ -57,6 +57,6 @@ def frequency(w, d):
 
 if __name__ == '__main__':
     # histogram("gutenberg.txt")
-
-    unique_words(histogram("shylock_homles.txt"))
-    frequency("mystery", histogram("shylock_homles.txt"))
+    hist = histogram("shylock_homles.txt")
+    unique_words(hist)
+    frequency("mystery", hist)
